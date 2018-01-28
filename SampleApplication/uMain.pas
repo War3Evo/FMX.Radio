@@ -22,7 +22,7 @@ uses
   FMX.StdCtrls,
   FMX.Layouts,
   FMX.Memo,
-  FMX.Radio, FMX.ScrollBox, FMX.Controls.Presentation;
+  FMX.Radio, FMX.ScrollBox, FMX.Controls.Presentation; //, FMX.Objects - Required for TPath;
 
 type
   TForm1 = class(TForm)
@@ -52,6 +52,8 @@ var
 implementation
 
 {$R *.fmx}
+
+//uses System.IOUtils; - Required for TPath
 
 procedure AddLog(pszData : string);
 begin
@@ -133,7 +135,6 @@ begin
       TrackBar1.Max := 100;
       TrackBar1.Value := 50;
   {$ENDIF}
-
 end;
 
 procedure TForm1.TrackBar1Tracking(Sender: TObject);

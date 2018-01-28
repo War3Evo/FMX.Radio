@@ -348,6 +348,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\15.0\PlatformSDKs\android-ndk-r9c\prebuilt\android-arm\gdbserver\gdbserver" Configuration="Debug" Class="AndroidGDBServer"/>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass_aac.so" Configuration="Release" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>library\lib\armeabi\</RemoteDir>
@@ -362,20 +363,8 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Release" Class="File">
-                    <Platform Name="iOSDevice32">
-                        <RemoteName>libbassflac.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Release" Class="File">
                     <Platform Name="Win64">
                         <RemoteName>libbassflac.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass.so" Configuration="Release" Class="File">
-                    <Platform Name="iOSDevice32">
-                        <RemoteName>libbass.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -403,7 +392,12 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\armeabi\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiFile"/>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass.so" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteName>libbass.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass_aac.so" Configuration="Release" Class="File">
                     <Platform Name="OSX32">
                         <RemoteName>libbass_aac.so</RemoteName>
@@ -421,6 +415,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi-v7a\libbassflac.so" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
+                        <RemoteName>libbassflac.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass.so" Configuration="Release" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>library\lib\armeabi\</RemoteDir>
@@ -431,6 +432,12 @@
                 <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass.so" Configuration="Debug" Class="File">
                     <Platform Name="Win64">
                         <RemoteName>libbass.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbassflac.so" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteName>libbassflac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -448,33 +455,26 @@
                 </DeployFile>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass.so" Configuration="Debug" Class="File">
                     <Platform Name="Android">
-                        <RemoteDir>.\assets\internal\</RemoteDir>
+                        <RemoteDir>library\lib\armeabi\</RemoteDir>
                         <RemoteName>libbass.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Debug" Class="File">
-                    <Platform Name="iOSDevice32">
-                        <RemoteName>libbassflac.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbassflac.so" Configuration="Debug" Class="File">
-                    <Platform Name="Android">
-                        <RemoteDir>.\assets\internal\</RemoteDir>
-                        <RemoteName>libbassflac.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\x86\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeX86File"/>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Release" Class="File">
-                    <Platform Name="OSX32">
-                        <RemoteName>libbassflac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbassflac.so" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi\</RemoteDir>
+                        <RemoteName>libbassflac.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteName>libbassflac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -518,10 +518,15 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\mips\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeMipsFile"/>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Release" Class="File">
                     <Platform Name="Android">
                         <RemoteName>libbassflac.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass.so" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteName>libbass.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -531,15 +536,15 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass.so" Configuration="Debug" Class="File">
-                    <Platform Name="Android">
-                        <RemoteDir>library\lib\x86\</RemoteDir>
-                        <RemoteName>libbass.so</RemoteName>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteName>libbassflac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass.so" Configuration="Debug" Class="File">
-                    <Platform Name="iOSDevice32">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\x86\</RemoteDir>
                         <RemoteName>libbass.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -574,19 +579,37 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Android\Debug\styles.xml" Configuration="Debug" Class="AndroidSplashStyles">
-                    <Platform Name="Android">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="C:\Users\Public\Documents\Embarcadero\Studio\15.0\PlatformSDKs\android-ndk-r9c\prebuilt\android-arm\gdbserver\gdbserver" Configuration="Debug" Class="AndroidGDBServer"/>
-                <DeployFile LocalName="Win32\Debug\RadioTest.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass_aac.so" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass_aac.so" Configuration="Debug" Class="File">
                     <Platform Name="iOSDevice32">
                         <RemoteName>libbass_aac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Android\Debug\styles.xml" Configuration="Debug" Class="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbassflac.so" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteName>libbassflac.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi-v7a\libbass.so" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
+                        <RemoteName>libbass.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass_aac.so" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteName>libbass_aac.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\x86\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeX86File"/>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass.so" Configuration="Debug" Class="File">
                     <Platform Name="Win64">
                         <RemoteName>libbass.so</RemoteName>
@@ -602,6 +625,12 @@
                 <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass_aac.so" Configuration="Debug" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>library\lib\x86\</RemoteDir>
+                        <RemoteName>libbass_aac.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass_aac.so" Configuration="Debug" Class="File">
+                    <Platform Name="iOSDevice32">
                         <RemoteName>libbass_aac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -660,21 +689,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbassflac.so" Configuration="Debug" Class="File">
-                    <Platform Name="iOSDevice32">
-                        <RemoteName>libbassflac.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbassflac.so" Configuration="Release" Class="File">
-                    <Platform Name="iOSDevice32">
-                        <RemoteName>libbassflac.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass_aac.so" Configuration="Release" Class="File">
-                    <Platform Name="iOSDevice32">
-                        <RemoteName>libbass_aac.so</RemoteName>
+                <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteName>libRadioTest.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -684,18 +701,14 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="$(BDS)\lib\android\debug\mips\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeMipsFile">
-                    <Platform Name="Android">
-                        <RemoteName>libRadioTest.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
+                <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\mips\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeMipsFile"/>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass_aac.so" Configuration="Debug" Class="File">
                     <Platform Name="Win64">
                         <RemoteName>libbass_aac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\armeabi\libnative-activity.so" Configuration="Debug" Class="AndroidLibnativeArmeabiFile"/>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Configuration="Debug" Class="Android_LauncherIcon144">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
@@ -732,6 +745,13 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi-v7a\libbass_aac.so" Configuration="Debug" Class="File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a\</RemoteDir>
+                        <RemoteName>libbass_aac.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Configuration="Debug" Class="Android_LauncherIcon96">
                     <Platform Name="Android">
                         <RemoteName>ic_launcher.png</RemoteName>
@@ -744,13 +764,24 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass.so" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteName>libbass.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass.so" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteName>libbass.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass.so" Configuration="Debug" Class="File">
                     <Platform Name="OSX32">
                         <RemoteName>libbass.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\classes.dex" Configuration="Debug" Class="AndroidClassesDexFile"/>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass.so" Configuration="Release" Class="File">
                     <Platform Name="OSX32">
                         <RemoteName>libbass.so</RemoteName>
@@ -771,7 +802,7 @@
                 </DeployFile>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass_aac.so" Configuration="Debug" Class="File">
                     <Platform Name="Android">
-                        <RemoteDir>.\assets\internal\</RemoteDir>
+                        <RemoteDir>library\lib\armeabi\</RemoteDir>
                         <RemoteName>libbass_aac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
@@ -801,21 +832,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass.so" Configuration="Debug" Class="File">
+                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Debug" Class="File">
                     <Platform Name="iOSDevice32">
-                        <RemoteName>libbass.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass_aac.so" Configuration="Debug" Class="File">
-                    <Platform Name="iOSDevice32">
-                        <RemoteName>libbass_aac.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass_aac.so" Configuration="Release" Class="File">
-                    <Platform Name="iOSDevice32">
-                        <RemoteName>libbass_aac.so</RemoteName>
+                        <RemoteName>libbassflac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -847,15 +866,15 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Debug" Class="File">
-                    <Platform Name="iOSSimulator">
-                        <RemoteName>libbassflac.so</RemoteName>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass_aac.so" Configuration="Release" Class="File">
+                    <Platform Name="iOSDevice32">
+                        <RemoteName>libbass_aac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbass.so" Configuration="Release" Class="File">
-                    <Platform Name="iOSDevice32">
-                        <RemoteName>libbass.so</RemoteName>
+                <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <RemoteName>libbassflac.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -865,6 +884,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="c:\program files (x86)\embarcadero\studio\15.0\lib\android\debug\classes.dex" Configuration="Debug" Class="AndroidClassesDexFile"/>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\armeabi\libbass_aac.so" Configuration="Release" Class="File">
                     <Platform Name="OSX32">
                         <RemoteName>libbass_aac.so</RemoteName>
@@ -901,6 +921,7 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="Win32\Debug\RadioTest.exe" Configuration="Debug" Class="ProjectOutput"/>
                 <DeployFile LocalName="..\FMXRadio\Library\Android\x86\libbassflac.so" Configuration="Debug" Class="File">
                     <Platform Name="Android">
                         <RemoteDir>library\lib\x86\</RemoteDir>
