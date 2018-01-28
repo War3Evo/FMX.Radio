@@ -1,12 +1,12 @@
 -- Note from War3Evo --
 
-   I am working to only to get this version working for the Android Version because that is all I care about getting working.
+   Works for Delphi 10.2.2 Tokyo for Firemonkey Android!
    
 -- End of Note from War3Evo --
 
 
 # FMX.Radio
-Delphi ~~XE7~~ Tokyo 10.2 Firemonkey Radio Player
+Delphi ~~XE7~~ Tokyo 10.2.2 Firemonkey Radio Player
 Stream data from HTTP and FTP servers (inc. Shoutcast, Icecast & Icecast2), with IDN and proxy server support and adjustable buffering 
 
 #FMX.Radio.Windows
@@ -16,27 +16,28 @@ Stream data from HTTP and FTP servers (inc. Shoutcast, Icecast & Icecast2), with
 </pre>
 
 #FMX.Radio.Android
+<pre>
+Download Latest Bass from http://www.un4seen.com/forum/?topic=13225
 Project -> Deployment -> Add Files
-<pre>
-1 : Library->Android->armeabi
+1 : Library->Android->armeabi  (Currently usable almost all androids)
 	a : libbass.so
 	b : libbass_aac.so	
 	c : libbassflac.so
-	Remote Path : library\lib\armeabi\
+	Remote Path : ~~library\lib\armeabi\~~ .\assets\internal\
 </pre>
 <pre>
-2 : Library->Android->x86
+OR : Library->Android->x86
 	a : libbass.so
 	b : libbass_aac.so	
 	c : libbassflac.so
-	Remote Path : library\lib\x86\
+	Remote Path : ~~library\lib\x86\~~ .\assets\internal\
 </pre>
 <pre>
-3 : Library->Android->armeabi-v7a
+OR : Library->Android->armeabi-v7a (Only usable in the newest androids)
 	a : libbass.so
 	b : libbass_aac.so	
 	c : libbassflac.so
-	Remote Path : library\lib\armeabi-v7a\
+	Remote Path : ~~library\lib\armeabi-v7a\~~ .\assets\internal\
 </pre>
 Make sure library files remote path name, must be added in the Deployment window.
 
