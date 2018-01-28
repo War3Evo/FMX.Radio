@@ -20,7 +20,8 @@ uses
   Windows
 {$ELSE}
     SysUtils,
-    System.StartupCopy // required to copy .so files to .\assets\internal\ for android
+    System.StartupCopy, // required to deploy files for android
+    FMX.Objects // required by system.IOUtils after implementation
 {$ENDIF};
 
 type
@@ -1086,8 +1087,6 @@ begin
   Result := '';
 {$ENDIF}
 {$IFDEF ANDROID}
-  Result := IncludeTrailingPathDelimiter(system.IOUtils.TPath.GetDocumentsPath);
-{$ELSE}
   Result := IncludeTrailingPathDelimiter(system.IOUtils.TPath.GetLibraryPath);
 {$ENDIF}
 end;
