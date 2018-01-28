@@ -22,7 +22,7 @@ uses
   FMX.StdCtrls,
   FMX.Layouts,
   FMX.Memo,
-  FMX.Radio;
+  FMX.Radio, FMX.ScrollBox, FMX.Controls.Presentation;
 
 type
   TForm1 = class(TForm)
@@ -80,7 +80,7 @@ Begin
   FRadyo.SetStatusProc(StatusProc);
   FRadyo.SetBroadcastInfoProc(BroadcastInfoProc);
   FRadyo.SetBroadcastMetaProc(BroadcastMetaProc);
-  FRadyo.SetStreamURL('http://radyo.normworks.com:8000/listen.pls');
+  FRadyo.SetStreamURL('http://s6.nexuscast.com/tunein/cactiradio.pls');
 
 
   if FRadyo.Play=True
