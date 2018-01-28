@@ -1,6 +1,9 @@
 -- Note from War3Evo --
+
    I worked only to get this version working for the Android Version because that is all I care about getting working.
+   
 -- End of Note from War3Evo --
+
 
 # FMX.Radio
 Delphi ~~XE7~~ Tokyo 10.2 Firemonkey Radio Player
