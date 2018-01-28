@@ -19,7 +19,8 @@ uses
 {$IFDEF MSWINDOWS}
   Windows
 {$ELSE}
-    SysUtils
+    SysUtils,
+    System.StartupCopy // required to copy .so files to .\assets\internal\ for android
 {$ENDIF};
 
 type
@@ -1083,6 +1084,9 @@ function BASS_FOLDER: String;
 begin
 {$IFDEF MSWINDOWS}
   Result := '';
+{$ENDIF}
+{$IFDEF ANDROID}
+  Result := IncludeTrailingPathDelimiter(system.IOUtils.TPath.GetDocumentsPath);
 {$ELSE}
   Result := IncludeTrailingPathDelimiter(system.IOUtils.TPath.GetLibraryPath);
 {$ENDIF}
