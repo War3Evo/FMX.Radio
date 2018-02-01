@@ -6,12 +6,15 @@
 
 # AndroidServicesRadio
 
-<pre>
+
 Because its required so that the sound doesn't clip if you put your application into the background in android.
+
 
 I converted the FMX.Radio so that you could use it as a Android Service.  For some reason, you can't use any FMX (Firemonkey) source code in a Android Service.
 
+
 The Youtube video https://www.youtube.com/watch?v=0mD3WLK8FYc is very helpful in understanding how to put a Android Service into your project.
+
 
 In order to change the StreamURL, you'll currently need to change it in the Services.Radio.Service.pas
 
@@ -19,6 +22,7 @@ In order to change the StreamURL, you'll currently need to change it in the Serv
 Overall, this is example code that you can change freely at will.  Just remember to remove the Android Service from your main project, Build the AndroidServicesRadio, then Add the AndroidServicesRadio as a Android Service back into your main project, and add its source files.
 
 
+<pre>
 1. Make sure you setup your Deployment in your "main project" for the android BASS audio library
 2. Build the AndroidServicesRadio project
 3. Add the AndroidServicesRadio as a Android Service to your project by right clicking on Android - Android SDK 24.3.3 32 bit and clicking on 'Add Android Service...'
