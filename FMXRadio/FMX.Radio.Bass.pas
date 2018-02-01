@@ -1097,8 +1097,8 @@ begin
 end;
 
 procedure LoadBassDLL;
-var
-  DocDir: string;
+//var
+  //DocDir: string;     //never used
 begin
   FBassDLL := LoadLibrary(PChar(BASS_FOLDER + bassdll));
   if FBassDLL = 0 then
