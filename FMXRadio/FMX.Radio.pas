@@ -35,14 +35,14 @@ type
   TFMXRadio = class(TFMXCustomRadio)
   private
     FPlatformRadio: TFMXCustomRadio;
-    FOwner : TFMXObject;
+    FOwner : TObject;   //was TFmxObject
 
     procedure InitRadio(iHandle:TWindowHandle);override;
     procedure UnloadRadio;override;
   public
     constructor Create;
     destructor Destroy; override;
-    procedure SetOwner(AOwner : TFmxObject);
+    procedure SetOwner(AOwner : TObject);
     procedure SetVolume(const AValue:Single); override;
     function  GetVolume: Single;override;
 
@@ -74,7 +74,7 @@ begin
   FPlatformRadio := TFMXPlatformRadio.Create;
 end;
 
-procedure TFMXRadio.SetOwner(AOwner : TFmxObject);
+procedure TFMXRadio.SetOwner(AOwner : TObject);     //was TFmxObject
 begin
   FOwner := AOwner;
   InitRadio(TForm(FOwner).Handle);
