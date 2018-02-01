@@ -16,13 +16,13 @@ In order to change the StreamURL, you'll currently need to change it in the Serv
 
 Overall, this is example code that you can change freely at will.  Just remember to remove the Android Service from your main project, Build the AndroidServicesRadio, then Add the AndroidServicesRadio as a Android Service back into your main project, and add its source files.
 
-<pre>
 1. Make sure you setup your Deployment in your "main project" for the android BASS audio library
 2. Build the AndroidServicesRadio project
 3. Add the AndroidServicesRadio as a Android Service to your project by right clicking on Android - Android SDK 24.3.3 32 bit and clicking on 'Add Android Service...'
 4. Add the Source Files Services.Radio.Android.pas, Services.Radio.Bass.pas, Services.Radio.BassAac.pas, Services.Radio.pas, Services.Radio.Service.pas, Services.Radio.Shared.pas to your project.
 5. Add this sourcecode into your main project:
 
+<pre>
 uses
   System.StartupCopy, System.Android.Service;
 
