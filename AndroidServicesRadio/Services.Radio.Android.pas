@@ -197,32 +197,23 @@ end;
 
 procedure TRTLPlatformRadio.SetStatusProc(AProc:TStatusProc);
 begin
-  if Assigned(FStatusProc)
-  then begin
     FStatusProc := AProc;
-  end;
 end;
 
 procedure TRTLPlatformRadio.SetBroadcastInfoProc(AProc:TBroadcastInfoProc);
 begin
-  if Assigned(FBroadcastInfoProc)
-  then begin
     FBroadcastInfoProc := AProc;
-  end;
 end;
 
 procedure TRTLPlatformRadio.SetBroadcastMetaProc(AProc:TBroadcastMetaProc);
 begin
-  if Assigned(FBroadcastMetaProc)
-  then begin
     FBroadcastMetaProc := AProc;
-  end;
 end;
 
 procedure TRTLPlatformRadio.InitRadio(iHandle:Pointer);
 begin
     FActiveChannel := 0;
-    FStatusProc:=Nil;
+    //FStatusProc:=Nil;
     ARadio := Self;
 
   if BASS_Init(-1,
