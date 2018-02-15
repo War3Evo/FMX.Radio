@@ -1,6 +1,8 @@
 -- Note from War3Evo --
 
    Works for Delphi 10.2.2 Tokyo for Firemonkey Android!
+
+   There is a developmental branch that I'm currently working on a method that will allow the service to communicate back to the main form/app.  Once I complete it, I'll move it to the master copy.
    
 -- End of Note from War3Evo --
 
