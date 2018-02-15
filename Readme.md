@@ -6,6 +6,10 @@
 
 # AndroidServicesRadio
 
+Requires source code from: https://github.com/War3Evo/KastriFree which allows the service to "talk back" to the main thread application.
+
+Check out the sourcecode from https://github.com/DelphiWorlds/KastriFree/blob/master/Demos/AndroidLocation/Application/LA.MainFrm.pas to understand how to make your main thread recieve the messages from the service.
+
 <pre>
 Because its required so that the sound doesn't clip if you put your application into the background in android.
 
