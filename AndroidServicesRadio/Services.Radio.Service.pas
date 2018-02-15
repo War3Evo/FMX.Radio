@@ -14,7 +14,6 @@ uses
   DateUtils;
 
 
-
 type
   TDM = class(TAndroidService)
     procedure AndroidServiceCreate(Sender: TObject);
@@ -23,7 +22,7 @@ type
       const Intent: JIntent; Flags, StartId: Integer): Integer;
   private
     { Private declarations }
-    NotificationCenter1: TNotificationCenter;
+    NotificationCenter1: TCustomNotificationCenter; // was TNotificationCenter;
     FRadyo: TRTLRadio;
     procedure LaunchNotification;
   public
@@ -71,7 +70,7 @@ begin
     MyNotification.AlertBody := Format('FUNC:%s:BROADCAST=%s:BITRATE=%s',['BroadcastInfoProc',pszBroadcastName,pszBitRate]);
     DM.NotificationCenter1.PresentNotification(MyNotification);
   finally
-    MyNotification.DisposeOf;
+    MyNotification.Free;
   end;
 end;
 
@@ -88,7 +87,7 @@ begin
     MyNotification.AlertBody := Format('FUNC:%s:%s',['BroadcastMetaProc',pszData]);
     DM.NotificationCenter1.PresentNotification(MyNotification);
   finally
-    MyNotification.DisposeOf;
+    MyNotification.Free;
   end;
 end;
 
@@ -160,7 +159,7 @@ begin
           MyNotification.AlertBody := InfoData;
           NotificationCenter1.PresentNotification(MyNotification);
         finally
-          MyNotification.DisposeOf;
+          MyNotification.Free;
         end;
       end;
       Result := TJService.JavaClass.START_STICKY; // rerun service if it stops
@@ -186,21 +185,38 @@ begin
   else Result := TJService.JavaClass.START_STICKY;
 end;
 
-
+{
 procedure TDM.LaunchNotification;
 var
   MyNotification: TNotification;
 begin
-   MyNotification := NotificationCenter1.CreateNotification;
-   try
-     MyNotification.Name := 'ServiceNotification';
-     MyNotification.Title := 'Android Service Notification';
-     MyNotification.AlertBody := 'My Notification works using GetMetaData LOL!';
-     MyNotification.FireDate := Now;
-     NotificationCenter1.PresentNotification(MyNotification);
-   finally
-     MyNotification.Free;
-   end;
+    if(NotificationCenter1.Supported) then
+    begin
+       MyNotification := NotificationCenter1.CreateNotification;
+       try
+         MyNotification.Name := 'ServiceNotification';
+         MyNotification.Title := 'Android Service Notification';
+         MyNotification.AlertBody := 'My Notification works using GetMetaData LOL!';
+         MyNotification.FireDate := Now;
+         NotificationCenter1.PresentNotification(MyNotification);
+       finally
+         MyNotification.Free;
+       end;
+    end;
+end; }
+
+procedure TDM.LaunchNotification;
+var
+  Intent: JIntent;
+begin
+  Intent := TJIntent.Create;
+  //Intent.setClassName(TAndroidHelper.Activity.getBaseContext,
+    //TAndroidHelper.StringToJString('com.embarcadero.services.plaStreamer'));
+  Intent.setType(StringToJString('text/pas'));
+  Intent.setAction(TJIntent.JavaClass.ACTION_VIEW);
+  Intent.putExtra(TJIntent.JavaClass.EXTRA_TEXT, StringToJString('Wow This is an Intent And May work! GetMetaData'));
+  //if TAndroidHelper.Activity.getPackageManager.queryIntentActivities(Intent, TJPackageManager.JavaClass.MATCH_DEFAULT_ONLY).size > 0 Then
+  TAndroidHelper.Activity.startActivity(Intent);
 end;
 
 end.
