@@ -19,7 +19,11 @@ Requires source code from: https://github.com/War3Evo/KastriFree which allows th
 Just put KastriFree folder next to the FMXradio folder, not inside it! Example:
 <pre>
 folder1
--- FMXradio
+-- folder2/AndroidServiceRadioSampleApplication
+-- folder2/AndroidServicesRadio
+-- folder2/FMXradio
+-- folder2/SampleApplication
+-- folder2/Screenshots
 -- KastriFree
 </pre>
 
