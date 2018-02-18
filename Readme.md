@@ -1,82 +1,35 @@
 -- Note from War3Evo --
 
    Works for Delphi 10.2.2 Tokyo for Firemonkey Android!
+   Don't ask me about getting it working for iphone unless you just want to send me a iphone to work with!
    
 -- End of Note from War3Evo --
 
 # AndroidServicesRadio
+This sample application is on Google Play: https://play.google.com/store/apps/details?id=com.embarcadero.plaStreamer&hl=en and I have included full source code.
+
+INSTRUCTIONS: To make life simple, I created a Project Group called UseThisProjectGroup to combine both the plaStreamer project and the AndroidRadioService project in the AndroidServiceRadioSampleApplication folder.  You'll need to have both projects up so you can build the AndroidRadioService, then add it to your plaStreamer project by right clicking on Android underneath "Target Platforms" and choosing "Add Android Service..." then find the AndroidServicesRadio folder and add it.  You'll also need to add the *.pas files from the AndroidServicesRadio folder.  You'll also need to make sure you have DW.Androidapi.JNI.LocalBroadcastManager.pas and DW.MultiReceiver.Android.pas and DW.GlobalDefines.inc included in your plaStreamer project. Double click on plaStreamer project in the Project Manager on the right side of your screen.  It should make it bold.  Then click the menu "Project" then find and click "Deployment".  Make sure that you do have all the required libbass files.  If your using my project files, it should have them already listed.  Make sure the remote path for the libbass*.* files are like... library\lib\armeabi-v7a\ library\lib\armeabi\ library\lib\x86\ ... if not.. double or triple click on the remote path and change them!  Everything should run fine.  Its on Google Play!   Have any issues let me know! 
 
 Requires source code from: https://github.com/War3Evo/KastriFree which allows the service to "talk back" to the main thread application.
 
-Check out the sourcecode from https://github.com/DelphiWorlds/KastriFree/blob/master/Demos/AndroidLocation/Application/LA.MainFrm.pas to understand how to make your main thread recieve the messages from the service.
-
+Just put KastriFree folder next to the FMXradio folder, not inside it! Example:
 <pre>
-Because its required so that the sound doesn't clip if you put your application into the background in android.
+folder1
+-- FMXradio
+-- KastriFree
+</pre>
+
+Notes and other helpful information:
+
+Check out the sourcecode from https://github.com/DelphiWorlds/KastriFree/blob/master/Demos/AndroidLocation/Application/LA.MainFrm.pas to understand how to make your main thread recieve the messages from the service.
 
 I converted the FMX.Radio so that you could use it as a Android Service.  For some reason, you can't use any FMX (Firemonkey) source code in a Android Service.
 
 The Youtube video https://www.youtube.com/watch?v=0mD3WLK8FYc is very helpful in understanding how to put a Android Service into your project.
 
-In order to change the StreamURL, you'll currently need to change it in the Services.Radio.Service.pas
+In order to change the StreamURL, see procedure TForm1.FormCreate(Sender: TObject); in unit1.pas of the AndroidServiceRadioSampleApplication folder.
 
-
-Overall, this is example code that you can change freely at will.  Just remember to remove the Android Service from your main project, Build the AndroidServicesRadio, then Add the AndroidServicesRadio as a Android Service back into your main project, and add its source files.
-
-
-1. Make sure you setup your Deployment in your "main project" for the android BASS audio library
-2. Build the AndroidServicesRadio project
-3. Add the AndroidServicesRadio as a Android Service to your project by right clicking on Android - Android SDK 24.3.3 32 bit and clicking on 'Add Android Service...'
-4. Add the Source Files Services.Radio.Android.pas, Services.Radio.Bass.pas, Services.Radio.BassAac.pas, Services.Radio.pas, Services.Radio.Service.pas, Services.Radio.Shared.pas to your project.
-5. Add this sourcecode into your main project:
-
-uses
-  System.StartupCopy, System.Android.Service;
-
-implementation
-
-uses
-  Androidapi.Helpers,
-  Androidapi.JNI.App,
-  Androidapi.JNI.GraphicsContentViewText, // for JIntent
-  Androidapi.JNI.JavaTypes;  // for JIntent
-
-procedure TForm1.FormCreate(Sender: TObject);
-var
-  LIntent: JIntent;
-begin
-  LIntent := TJIntent.Create;
-  LIntent.setClassName(TAndroidHelper.Activity.getBaseContext,
-    TAndroidHelper.StringToJString('com.embarcadero.services.AndroidRadioService'));
-  LIntent.setAction(StringToJString('StartIntent'));
-  TAndroidHelper.Activity.startService(LIntent);
-end;
-
-
-
-6. To pause the radio add this code somewhere in your project:
-var
-  LIntent: JIntent;
-
-        LIntent := TJIntent.Create;
-        LIntent.setClassName(TAndroidHelper.Context.getPackageName(),
-          TAndroidHelper.StringToJString('com.embarcadero.services.AndroidRadioService'));
-        LIntent.setAction(StringToJString('PauseRadio'));
-        TAndroidHelper.Activity.startService(LIntent);
-
-
-
-7. To play the radio add this code somewhere in your project:
-var
-  LIntent: JIntent;
-
-        LIntent := TJIntent.Create;
-        LIntent.setClassName(TAndroidHelper.Context.getPackageName(),
-          TAndroidHelper.StringToJString('com.embarcadero.services.AndroidRadioService'));
-        LIntent.setAction(StringToJString('PlayRadio'));
-        TAndroidHelper.Activity.startService(LIntent);
-
-
-</pre>
+## OTHER INFORMATION from previous FMX.Radio that is helpful
 
 # FMX.Radio
 Delphi Tokyo 10.2.2 Firemonkey Radio Player
