@@ -7,6 +7,7 @@ uses
   System.Classes,
   System.Android.Service,
   System.Notification,     // for TJService
+  Androidapi.JNI.Support,
   Androidapi.Helpers,      // for StringToJString
   AndroidApi.JNI.GraphicsContentViewText,
   Androidapi.JNI.Os,
@@ -87,6 +88,9 @@ end;
 
 function TDM.AndroidServiceStartCommand(const Sender: TObject;
   const Intent: JIntent; Flags, StartId: Integer): Integer;
+var
+  MyNotification: JNotification;
+  NotificationBuilder: JNotificationCompat_Builder;
 begin
   // recieve commands
   if Assigned(Intent) then
@@ -99,12 +103,20 @@ begin
     else if Intent.getAction.equalsIgnoreCase(StringToJString('StartIntent')) = true then
     begin
       FRadyo.SetStreamURL(JStringToString(Intent.getData.toString));
+
       Result := TJService.JavaClass.START_STICKY; // rerun service if it stops
     end
     else if Intent.getAction.equalsIgnoreCase(StringToJString('PlayRadio')) = true then
     begin
       if Assigned(FRadyo)
         then begin
+                NotificationBuilder := TJNotificationCompat_Builder.JavaClass.init(TAndroidHelper.Context);
+                NotificationBuilder := NotificationBuilder.setSmallIcon(TAndroidHelper.Context.getApplicationInfo.icon);
+                NotificationBuilder := NotificationBuilder.setContentTitle(StrToJCharSequence(TAndroidHelper.ApplicationTitle));
+                NotificationBuilder := NotificationBuilder.setContentText(StrToJCharSequence('Foreground Service Started'));
+                MyNotification := NotificationBuilder.build;
+                JavaService.startForeground(666,MyNotification);
+
                 FRadyo.Play;
         end;
       Result := TJService.JavaClass.START_STICKY; // rerun service if it stops
@@ -113,6 +125,13 @@ begin
     begin
       if Assigned(FRadyo)
         then begin
+                NotificationBuilder := TJNotificationCompat_Builder.JavaClass.init(TAndroidHelper.Context);
+                NotificationBuilder := NotificationBuilder.setSmallIcon(TAndroidHelper.Context.getApplicationInfo.icon);
+                NotificationBuilder := NotificationBuilder.setContentTitle(StrToJCharSequence(TAndroidHelper.ApplicationTitle));
+                NotificationBuilder := NotificationBuilder.setContentText(StrToJCharSequence('Foreground Service Stopped'));
+                MyNotification := NotificationBuilder.build;
+                JavaService.stopForeground(true);
+
                 FRadyo.Pause;
         end;
       Result := TJService.JavaClass.START_STICKY; // rerun service if it stops
