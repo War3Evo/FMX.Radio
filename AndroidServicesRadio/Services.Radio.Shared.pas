@@ -9,9 +9,9 @@ unit Services.Radio.Shared;
 interface
 
 const
-  strLoading:String='Loading...';
-  strUnknown:String='Unknown!';
-  strCompleted:String='Completed!';
+  strLoading:String='LOADING';
+  strUnknown:String='UNKNOWN';
+  strCompleted:String='COMPLETED';
 
 type
     TStatusProc        = procedure(pszData : string;Progress:Integer);

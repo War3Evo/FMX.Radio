@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1C68ED89-3D36-4488-8019-7E946B5AE74A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="plaStreamer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\AndroidServicesRadio\AndroidRadioService.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="plaStreamer">
+        <MSBuild Projects="plaStreamer.dproj"/>
+    </Target>
+    <Target Name="plaStreamer:Clean">
+        <MSBuild Projects="plaStreamer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="plaStreamer:Make">
+        <MSBuild Projects="plaStreamer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AndroidRadioService">
+        <MSBuild Projects="..\AndroidServicesRadio\AndroidRadioService.dproj"/>
+    </Target>
+    <Target Name="AndroidRadioService:Clean">
+        <MSBuild Projects="..\AndroidServicesRadio\AndroidRadioService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AndroidRadioService:Make">
+        <MSBuild Projects="..\AndroidServicesRadio\AndroidRadioService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="plaStreamer;AndroidRadioService"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="plaStreamer:Clean;AndroidRadioService:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="plaStreamer:Make;AndroidRadioService:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -6,8 +6,8 @@
 
 unit Services.Radio;
 
-{$WARNINGS OFF}
-{$HINTS OFF}
+{$WARNINGS ON}    // Was OFF
+{$HINTS ON}       // Was OFF
 
 interface
 uses Services.Radio.Shared;
@@ -16,26 +16,26 @@ uses Services.Radio.Shared;
 
 type
   TRTLCustomRadio = class(TObject)
-    procedure InitRadio(iHandle:Pointer);virtual;abstract;
-    procedure UnloadRadio;virtual;abstract;
     function  Play:Boolean;virtual;abstract;
     procedure Pause;virtual;abstract;
     procedure SetStreamURL(AUrl : string);virtual;abstract;
 
+    procedure InitRadio(iHandle:Pointer);virtual;abstract;
+    procedure UnloadRadio;virtual;abstract;
+
     procedure SetStatusProc(AProc:TStatusProc);virtual;abstract;
     procedure SetBroadcastInfoProc(AProc:TBroadcastInfoProc);virtual;abstract;
     procedure SetBroadcastMetaProc(AProc:TBroadcastMetaProc);virtual;abstract;
-
   end;
 
 
   TRTLRadio = class(TRTLCustomRadio)
+    procedure InitRadio(iHandle:Pointer);override;    // was private, but hints told me to put it here
+    procedure UnloadRadio;override;                   // was private, but hints told me to put it here
   private
     FPlatformRadio: TRTLCustomRadio;
     FOwner : Pointer;   //was TFmxObject
 
-    procedure InitRadio(iHandle:Pointer);override;
-    procedure UnloadRadio;override;
   public
     constructor Create;
     destructor Destroy; override;
