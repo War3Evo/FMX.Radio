@@ -1,6 +1,9 @@
 -- Note from War3Evo --
 
    Works for Delphi 10.2.2 Tokyo for Firemonkey Android!
+   
+   One user has found that this sourcecode does not work for them in Delphi Seattle.  https://forums.embarcadero.com/messageview.jspa?messageID=933792&stqc=true
+   
    Don't ask me about getting it working for iphone unless you just want to send me a iphone to work with!
    
 -- End of Note from War3Evo --
